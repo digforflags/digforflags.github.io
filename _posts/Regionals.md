@@ -41,7 +41,7 @@ Dernæst prøvede jeg at eksekvere filen.
 
 Dette gav mig ikke så meget at gå videre med. Jeg loadede dernæst filen op i Ghidra og kørte auto-analyse.
 
-![Main funktion](ghidra_sledgehammer-1.png)
+![alt text](ghidra_sledgehammer-1.png)
 
 Dernæst tjekkede jeg for strings, og sorterede efter størrelsen på addressen. 
 
