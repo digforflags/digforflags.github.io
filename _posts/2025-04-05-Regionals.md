@@ -1,6 +1,6 @@
 ---
 title: DDC Regionals
-date: 2025-04-06 19:52:00 -500
+date: 2025-04-06 19:52:00 
 categories: [Write-up, DDC Regionals ]
 tags: [ddc,rev, Bbginner, forensics, crypto, binary]     # TAG names should always be lowercase
 ---
