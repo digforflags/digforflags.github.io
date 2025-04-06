@@ -3,6 +3,7 @@ title: DDC Regionals
 date: 2025-04-06 19:52:00 +0100
 categories: [Write-up, DDC Regionals ]
 tags: [ddc,rev, Bbginner, forensics, crypto, binary]     # TAG names should always be lowercase
+media_subpath: /assets/img/
 ---
 
 
@@ -44,13 +45,13 @@ Dernæst prøvede jeg at eksekvere filen.
 
 Dette gav mig ikke så meget at gå videre med. Jeg loadede dernæst filen op i Ghidra og kørte auto-analyse.
 
-![img-description](/assets/img/Ghidra-sledgehammer.png)
+![img-description](Ghidra-sledgehammer.png)
 
 
 
 Dernæst tjekkede jeg for strings, og sorterede efter størrelsen på addressen. 
 
-![img-description](/assets/img/Ghidra-sledgehammer-strings.png)
+![img-description](Ghidra-sledgehammer-strings.png)
 
 Det ligner svaret bliver givet efter spørgsmålet. Jeg prøvede dernæst at give programmet "Detect the threat"
 
