@@ -41,11 +41,11 @@ Dernæst prøvede jeg at eksekvere filen.
 
 Dette gav mig ikke så meget at gå videre med. Jeg loadede dernæst filen op i Ghidra og kørte auto-analyse.
 
-![alt text](ghidra_sledgehammer.png)
+(indsæt billede)
 
 Dernæst tjekkede jeg for strings, og sorterede efter størrelsen på addressen. 
 
-![alt text](Ghidra_sledgehammer_strings-1.png)
+(indsæt billede)
 
 Det ligner svaret bliver givet efter spørgsmålet. Jeg prøvede dernæst at give programmet "Detect the threat"
 
