@@ -7,6 +7,8 @@ tags: [ddc,rev, Bbginner, forensics, crypto, binary]     # TAG names should alwa
 
 
 # DDC Regionals
+Jeg kvalificerede mig for 3-4. år til regionals. Denne gang har jeg løst nok opgaver til jeg synes et write-up er justificeret. 
+
 
 ## Beginner
 
@@ -42,13 +44,13 @@ Dernæst prøvede jeg at eksekvere filen.
 
 Dette gav mig ikke så meget at gå videre med. Jeg loadede dernæst filen op i Ghidra og kørte auto-analyse.
 
-![img-description](images/ghidra_sledgehammer.png)
+![img-description](_posts/images/ghidra_sledgehammer.png)
 
 
 
 Dernæst tjekkede jeg for strings, og sorterede efter størrelsen på addressen. 
 
-![img-description](images/ghidra_sledgehammer_strings.png)
+![img-description](_posts/images/ghidra_sledgehammer_strings.png)
 
 Det ligner svaret bliver givet efter spørgsmålet. Jeg prøvede dernæst at give programmet "Detect the threat"
 
