@@ -44,13 +44,13 @@ Dernæst prøvede jeg at eksekvere filen.
 
 Dette gav mig ikke så meget at gå videre med. Jeg loadede dernæst filen op i Ghidra og kørte auto-analyse.
 
-
-![]({{"/assets/img/Ghidra-sledgehammer.png" | relative_url }} )
+![]({{ BASE_PATH }}/assets/images/ghidra-sledgehammer.png)
 
 
 Dernæst tjekkede jeg for strings, og sorterede efter størrelsen på addressen. 
 
-![]({{"/assets/img/ghidra-sledgehammer-strings.png" | relative_url }} )
+
+![]({{ BASE_PATH }}/assets/images/ghidra-sledgehammer.png)
 
 Det ligner svaret bliver givet efter spørgsmålet. Jeg prøvede dernæst at give programmet "Detect the threat"
 
