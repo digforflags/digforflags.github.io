@@ -2,7 +2,7 @@
 title: DDC Regionals
 date: 2025-04-06 19:52 -500
 categories: [DDC Regionals, rev, Bbginner, forensics, crypto, binary]
-tags: []     # TAG names should always be lowercase
+tags: [ddc]     # TAG names should always be lowercase
 ---
 
 # DDC Regionals
