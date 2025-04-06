@@ -45,13 +45,13 @@ Dernæst prøvede jeg at eksekvere filen.
 
 Dette gav mig ikke så meget at gå videre med. Jeg loadede dernæst filen op i Ghidra og kørte auto-analyse.
 
-![img-description](https://ibb.co/fd4svdk9)
+![img-description](Ghidra-sledgehammer.png)
 
 
 
 Dernæst tjekkede jeg for strings, og sorterede efter størrelsen på addressen. 
 
-![img-description](https://ibb.co/xKDpN2gX)
+![img-description](Ghidra-sledgehammer-strings.png)
 
 Det ligner svaret bliver givet efter spørgsmålet. Jeg prøvede dernæst at give programmet "Detect the threat"
 
