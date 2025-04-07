@@ -16,7 +16,7 @@ timezone:
 
 title: DigForFlags # the main title
 
-tagline: My own little blog for CTF write-ups # it will display as the subtitle
+tagline: My own blog for CTF write-ups # it will display as the subtitle
 
 description: >- # used by seo meta and the atom feed
   DDC,CTF
