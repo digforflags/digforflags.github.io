@@ -46,6 +46,7 @@ Dette gav mig ikke så meget at gå videre med. Jeg loadede dernæst filen op i 
 
 ![ Alt Text](https://i.postimg.cc/NfGTN4T2/ghidra-sledgehammer.png)
 
+![Alt Text]({{ '/assets/img/ghidra-sledgehammer.png' | absolute_url }})
 
 Dernæst tjekkede jeg for strings, og sorterede efter størrelsen på addressen. 
 
