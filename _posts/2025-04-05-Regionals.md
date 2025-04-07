@@ -104,6 +104,7 @@ Det tog lidt tid men jeg endte med at gennemskue at flaget indeholdt leet kode, 
 ![Alt Text]({{ '/assets/img/substitution.png' | absolute_url }})
 
 Dette endte med at give følgende samtale: 
+
 Elon musk:
 Donald jeg ved du har adgang til mange hemmeligheder noget sjovt du kan dele?
 
