@@ -7,7 +7,7 @@ tags: [ddc,rev, Beginner, forensics, crypto, binary]     # TAG names should alwa
 
 
 # DDC Regionals
-Jeg kvalificerede mig for 3-4. år til regionals. Denne gang har jeg løst nok opgaver til jeg synes et write-up er justificeret. 
+Jeg kvalificerede mig for 3-4. år i træk til regionals. Denne gang har jeg løst nok opgaver til jeg synes et write-up er justificeret. 
 
 
 ## Beginner
