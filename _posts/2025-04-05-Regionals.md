@@ -52,7 +52,6 @@ Dette gav mig ikke så meget at gå videre med. Jeg loadede dernæst filen op i 
 
 Dernæst tjekkede jeg for strings, og sorterede efter størrelsen på addressen. 
 
-![ Alt Text](https://i.ibb.co/cK1Gjy8k/Ghidra-sledgehammer-strings.png)
 ![ Alt Text](https://raw.githubusercontent.com/digforflags/digforflags.github.io/refs/heads/main/images/Ghidra-sledgehammer-strings.png)
 
 Det ligner svaret bliver givet efter spørgsmålet. Jeg prøvede dernæst at give programmet "Detect the threat"
