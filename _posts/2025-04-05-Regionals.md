@@ -47,9 +47,6 @@ Dette gav mig ikke så meget at gå videre med. Jeg loadede dernæst filen op i 
 ![ Alt Text](https://i.postimg.cc/NfGTN4T2/ghidra-sledgehammer.png)
 
 
-
-
-
 Dernæst tjekkede jeg for strings, og sorterede efter størrelsen på addressen. 
 
 ![ Alt Text](https://raw.githubusercontent.com/digforflags/digforflags.github.io/refs/heads/main/images/Ghidra-sledgehammer-strings.png)
