@@ -101,7 +101,7 @@ Substitutionsciffer opgaver er altid irriterende. Jeg prøvede først at få AI 
 Jeg brugte dernæst mine Paint evner til langsomt at dekode emojis. Jeg startede med navnene, som gav de mest brugte vokaler, og arbejdede mig dernæst bare metodisk igennem.
 Det tog lidt tid men jeg endte med at gennemskue at flaget indeholdt leet kode, og derfor manglede jeg noget. 
 
-![Alt Text]({{ '/assets/img/substitution.jpg' | absolute_url }})
+![Alt Text]({{ '/assets/img/substitution.png' | absolute_url }})
 
 Dette endte med at give følgende samtale: 
 Elon musk:
