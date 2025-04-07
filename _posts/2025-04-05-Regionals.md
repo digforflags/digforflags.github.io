@@ -63,7 +63,7 @@ Detect the threat
 
 Det virkede. Jeg gennemgik manuelt resten og fik flaget som endte med at være første bogstav for hvert svar. 
 
-Dog gav dette mig chancen for at bruge pwntools biblioteket i Python for at automatisere det. Programmet indeholder et array kaldet flag, hvor local_88 bliver brugt som indeksering. Dernæst bliver der brugt lidt bit manipulation. 
+Dog gav dette mig chancen for at bruge pwntools biblioteket i Python for at automatisere det. Programmet indeholder et array navngivet flag, hvor variablen local_88 bliver brugt som indeksering. Dernæst bliver der brugt lidt bit manipulation. 
 
 Det vil sige jeg blot kan automatisere denne process. Dette implementerede jeg med dette script: 
 ```python
