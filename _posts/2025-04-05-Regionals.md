@@ -44,13 +44,11 @@ Dernæst prøvede jeg at eksekvere filen.
 
 Dette gav mig ikke så meget at gå videre med. Jeg loadede dernæst filen op i Ghidra og kørte auto-analyse.
 
-![ Alt Text](https://i.postimg.cc/NfGTN4T2/ghidra-sledgehammer.png)
-
 ![Alt Text]({{ '/assets/img/ghidra-sledgehammer.png' | absolute_url }})
 
 Dernæst tjekkede jeg for strings, og sorterede efter størrelsen på addressen. 
 
-![ Alt Text](https://raw.githubusercontent.com/digforflags/digforflags.github.io/refs/heads/main/images/Ghidra-sledgehammer-strings.png)
+![Alt Text]({{ '/assets/img/Ghidra-sledgehammer-strings.png' | absolute_url }})
 
 Det ligner svaret bliver givet efter spørgsmålet. Jeg prøvede dernæst at give programmet "Detect the threat"
 
