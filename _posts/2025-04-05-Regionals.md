@@ -33,6 +33,7 @@ http://flashbackmaskinen.hkn
 
 ### #FAKENEWS
 Vi er faldet over en X tråd mellem Musk og Trump, hvor vi mistænker Trump for at dele information, men hvad er det for en hemmelighed Trump deler?
+
 ![Alt Text]({{ '/assets/img/fakenews.jpg' | absolute_url }})
 ## Cryptography
 
