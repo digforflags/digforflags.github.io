@@ -3,6 +3,7 @@ title: DDC Regionals
 date: 2025-04-06 19:52:00 +0100
 categories: [Write-up, DDC Regionals ]
 tags: [ddc,rev, Beginner, forensics, crypto, binary]     # TAG names should always be lowercase
+math: true
 ---
 
 
@@ -122,6 +123,84 @@ interessant mon nogen kan finde ud af, hvad det betyder? x c t f   x h a c k t h
 Samt flaget: DDC{musk_f0r_pr3s1d3n7}
 
 ## Cryptography
+### Exponential Caesar
+Challenge beskrivelse: 
+Jeg har forsøgt at gøre Cæsar-chifferet sikkert med ideer fra gruppeteori.
+
+Nu udføres kryptering ved eksponentiering, som skal være meget mere sikker end simpel addition eller multiplikation.
+
+Kan du dekryptere flaget?
+Vedhæftet var en zip-fil med et python script samt en tekstfil med den krypterede tekst. 
+```python
+import string
+import random
+import math
+
+alphabet = 'abcdefghijklmnopqrstuvwxyzæøå'
+
+# Rotate each character by the index of the key character
+def mult(a, b):
+    # Ignore spaces
+    if a in string.whitespace:
+        return a
+    return alphabet[pow(alphabet.index(a), alphabet.index(b), len(alphabet))]
+
+def caesar_encrypt(key, text):
+    ciphertext = ""
+    for i in range(len(text)):
+        ciphertext += mult(text[i], key)
+    return ciphertext
+
+key = 'a'
+while (math.gcd(alphabet.index(key), len(alphabet) - 1) != 1):
+	key = random.choice(alphabet)
+print(key)
+
+def main():
+    # Danish text, flag is in text
+    with open('flag.txt', 'rb') as f:
+        text = f.read().decode("utf-8").strip()
+
+    ciphertext = caesar_encrypt(key, text)
+
+    with open('encryption.txt', 'wb') as f:
+        f.write(ciphertext.encode("utf-8"))
+
+if __name__ == '__main__':
+    main()
+```
+Denne minder lidt om en af Qualifier opgaverne, og jeg brugte nogenlunde samme teknik. Jeg er ikke særlig velbevandret i crypto. I det givne script Sker der følgende: 
+$$
+a^b\mod 29
+$$
+hvor a er et tilfældig bogstavs indeks, b er det givne bogstavs indeks fra flaget, og for at sørge for at holde os indenfor alfabetet tages modulus 29.
+Jeg skrev derfor blot et script der implementerer samme idé men bruteforcer key'en. 
+```python
+import string
+import random
+import math
+
+alphabet = 'abcdefghijklmnopqrstuvwxyzæøå'
+encryption_text = "pps øxf vigfm in saftam dt eiø fuviefeødak"
+# Rotate each character by the index of the key character
+def mult(a, b):
+    # Ignore spaces
+    if a in string.whitespace:
+        return a
+    return alphabet[pow(alphabet.index(a), alphabet.index(b), len(alphabet))]
+
+for i in range(len(alphabet)):
+    decrypted_text = ""
+    key = alphabet[i]
+    for i in range(len(encryption_text)):
+            decrypted_text += mult(encryption_text[i], key)
+    if decrypted_text.find("ddc") != -1: 
+        print(decrypted_text)
+```
+Dette gav mig teksten: ddc the power of caesar is not exponential 
+som kunne omskrives til flaget: ddc{the_power_of_caesar_is_not_exponential}
+
+
 
 ## Forensics 
 ### The right light
